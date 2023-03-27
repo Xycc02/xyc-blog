@@ -3,7 +3,7 @@ server:
   port: 8080
 spring:
   mvc:
-    pathmatch:
+    path match:
       matching-strategy: ant_path_matcher
   # 应用名称
   application:
@@ -86,6 +86,10 @@ spring:
     username: xyc2672424338@163.com
     # 授权码
     password: ECEMSGBNTQGCYJYR
+  #生产环境
+  config:
+    activate:
+      on-profile: pro
 # 博客链接 域名后面要加/
 blog:
   url: 43.143.252.85

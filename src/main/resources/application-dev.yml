@@ -3,7 +3,7 @@ server:
   port: 8080
 spring:
   mvc:
-    pathmatch:
+    path match:
       matching-strategy: ant_path_matcher
   # 应用名称
   application:
@@ -65,6 +65,7 @@ spring:
         max-idle: 100
         # 连接池中的最小空闲连接
         min-idle: 50
+    database: 1
   # rabbitmq配置
   rabbitmq:
     host: 127.0.0.1
@@ -86,6 +87,10 @@ spring:
     username: xyc2672424338@163.com
     # 授权码
     password: ECEMSGBNTQGCYJYR
+  #开发环境
+  config:
+    activate:
+      on-profile: dev
 # 博客链接 域名后面要加/
 blog:
   url: 127.0.0.1
