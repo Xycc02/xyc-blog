@@ -12,6 +12,7 @@ import com.ican.utils.IpUtils;
 import com.ican.utils.UserAgentUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
@@ -39,6 +40,7 @@ public class MySaTokenListener implements SaTokenListener {
      * 每次登录时触发
      */
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void doLogin(String loginType, Object loginId, String tokenValue, SaLoginModel loginModel) {
         // 查询用户昵称
         User user = userMapper.selectOne(new LambdaQueryWrapper<User>()

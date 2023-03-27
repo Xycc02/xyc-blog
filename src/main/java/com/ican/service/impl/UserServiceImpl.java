@@ -135,6 +135,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void updateUser(UserRoleDTO user) {
         // 更新用户信息
         User newUser = User.builder()
@@ -152,6 +153,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void updateUserStatus(DisableDTO disable) {
         // 更新用户状态
         User newUser = User.builder()
