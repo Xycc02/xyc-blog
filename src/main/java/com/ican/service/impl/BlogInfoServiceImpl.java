@@ -60,6 +60,10 @@ public class BlogInfoServiceImpl implements BlogInfoService {
     @Autowired
     private HttpServletRequest request;
 
+
+    /**
+     * 只记录前台UV
+     */
     @Override
     public void report() {
         // 获取用户ip
